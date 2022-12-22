@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from wtdmp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('xds/', views.xd_list),
+    path('packages/', views.package_list)
 ]
