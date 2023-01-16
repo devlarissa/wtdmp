@@ -11,3 +11,8 @@ class PackageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Package
         fields = ['id', 'lat', 'lng']
+
+class DeliverSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = XD
+        fields = ['id', 'lat', 'lng']

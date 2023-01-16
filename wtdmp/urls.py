@@ -20,5 +20,6 @@ from wtdmp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('xds/', views.xd_list),
-    path('packages/', views.package_list)
+    path('packages/', views.package_list),
+    path('deliver/<int:id>', views.deliver_to)
 ]
