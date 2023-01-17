@@ -1,6 +1,7 @@
 from django.test import TestCase
 from wtdmp.models import Package
 from wtdmp.models import XD
+from wtdmp.views import deliver_to
 
 class TestExampleTestCase(TestCase):
     
@@ -23,3 +24,11 @@ class TestExampleTestCase(TestCase):
         
         assert package.distance_between(xds) != None
         assert package.distance_between(xds) == xds[2]
+    
+    def test_package_does_not_exist(self):
+
+        result = deliver_to(None, 2)
+
+        assert result._container[0] == b'{"erro": "Package matching query does not exist."}'
+
+
